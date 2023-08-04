@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var lista = ViewBag.Lista;
+    var titulo = ViewBag.Title;
+
+    ViewBag.Title = "Cadastro de "+ ViewBag.Title;
+}
+
+
+    @RenderSection("Styles", true)
+    @RenderBody()
+
+    <div id="cadastro">
+        <section id="cadastro_cabecalho">
+            <h1>@ViewBag.Title</h1>  <!---O arroba signfica que estou utlizando o razon-->
+        </section>
+        <section id="cadastro_conteudo">
+            <div id="cabecalho_grid" class="row">
+                <div class="col-md-12">
+                    <a id="btn_incluir" class="btn btn-success" role="button"><i class="glyphicon glyphicon-plus"></i> Incluir</a>
+                    @Html.DropDownList("ddl_tam_pag", (SelectList)ViewBag.ListaTamPag, new { @class = "selectpicker" })<!---crinaod dropdonwlist-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="grid_cadastro" class="table table-bordered table-striped table-hover @Html.Raw(lista == null || lista.Count == 0 ? "display-none" : "")">
+
+                        <thead>
+                            <tr>
+                                @RenderSection("TituloGrid", true) <!---herdando de index.cshtml -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @RenderSection("LinhaGrid", true)
+
+                        </tbody>
+                    </table>
+                    <div id="mensagem_grid" @Html.Raw(lista != null && lista.Count > 0 ? "style=\"display: none;\"" : "")>
+
+
+                        Nenhum registro em @titulo
+                    </div>
+                </div>
+            </div>
+            @if (ViewBag.QuantPaginas > 1)
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li> <!---configrando pagina 123..-->
+                                @for (int i = 2; i <= ViewBag.QuantPaginas; i++)
+                                {
+                                    <li class="page-item"><a class="page-link" href="#">@i</a></li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+    @Html.Hidden("id_cadastro")
+    <div id="modal_cadastro" class="form-horizontal" style="display:none" role="dialog">
+        <div id="msg_mensagem_aviso" class="text-danger" style="display:none"></div>
+        <fieldset>
+            @Html.AntiForgeryToken()<!---Evintando atack CSRF-->
+            @RenderSection("CamposCadastro", true)
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="modal-footer">
+                            <a id="btn_sair" class="btn btn-default" role="button" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i> Sair</a>
+                            <a id="btn_confirmar" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-ok"></i> Salvar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="msg_aviso" class="alert alert-warning" style="display:none">Falta preencher os campos acima.</div>
+            <div id="msg_erro" class="alert alert-danger" style="display:none">Ops! Deus ruim!</div>
+        </fieldset>
+    </div>
+    @section Scripts{
+        <script src="~/Scripts/Cadastro/CadBase.js"></script>
+        @RenderSection("Scripts", true)
+    }
+
+
+
+
+

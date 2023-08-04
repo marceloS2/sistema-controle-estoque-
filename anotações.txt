@@ -1,0 +1,231 @@
+aula 6
+string de conexão esta na pasta models 
+na class Usuario molds
+--------------------------------------------
+aula 7 crud 
+
+tecnoliga usadas
+
+- Razor
+- javascript
+- jquery
+- ajax
+-------------------------------------------
+
+aula 8 
+
+-utilzando ajaxa nos botoes 
+-alterar e excluir 
+- Que esta na view grupoproduto.cshtml.
+-Criando back end metudo post :class cadastrocontroller.cs
+
+-usando bootboxjs depois de baixando joga na pasta script/unclua ele no bundle dentro da pasta app-start
+scritps/bootbox.min.js
+
+-depois voce acresenta ele no seu codigo js 
+
+---------------------------------------------
+aula 9 
+-- view grupoprodutos.cshtml
+-- criando alerta do botão excluir usando script bootboxjs bootstreap<javascript>
+---------------------------------------------
+aula 10 criando validação no back end
+---  requered validando que o campo é obrigatorio 
+---(!ModelState.IsValid) nos diz se avalidação ela foi bem 
+sucedida.
+--- construindo validação dos compos incluir na grupoproduto.cshtml!
+---------------------------------------------------------------------------------------------
+aual 11
+implemtando banco de dados!
+salvar deletar excluir alterar
+e configurando string de conexão!
+------------------------------------
+aual 12
+seguraça md5
+crinado um pasta chamada helper
+class chamada criptohelper 
+---------------------------------------
+auala 13 
+invitando slqInject 
+construindo criando parametros na class UsuarioModel
+"where login='{0}' and senha {1}'",
+--------------------------------------
+aula 14 
+Seguranaça da aplicação XSS
+è  um tipo de vulnerabilidade tipicamente encotrada 
+em app WEB.
+<script>alert('fom!')</script> Pode ser injetado
+Construindo uma validiçao na class Global.asax.cs
+--------------------------------------------------
+aula 15 segurança 
+CSRF
+Evitando falcificação de requisição cruzada!
+------------------------------------------------
+aula 16 cadastro usuario
+criando tela de cadastro usuario 
+com as validações usando quase o mesmo
+codigo do grupode prodotus, implemetando as funções
+----------------------------------------------------
+Aual 17
+craindo paginação 123...
+da tela de cadastro de produto
+
+Aual 18 criando a segunda pagina
+ussando AJAX
+criando uma noval class no grupocontrol.cs 
+chamada GrupoProdutoPagina
+Retornando um Json no response 
+
+Aula 19----implemetando a seleção de condidade do grid[10,]
+e refatorando o codigo
+foi implemetado um dropdown na grupoProduto.cthml
+https://developer.snapappointments.com/bootstrap-select/ [dropdowselect]
+colar o arquivo baixado da pasta dist
+pegar os arquivos da dist e coloca dentro js script/bootstrap select na pasta content
+refaturando codigo fazendo uma index.cshtml
+criando nova class CadGruproduto.
+
+--------------------------------------------------
+aula 20 arrumando o codigo
+separando o css de edição criando uma pasta dentro
+da content , crinado uma style chamada grupo produto
+Criando uma pasta dentro da script chamada cadastro
+e colocadno os escript do codigo index dentro dela 
+fazendo as ligações das url 
+crinado um class chamada leyout dentro da shared
+---------------------------------------------------
+aula 21-- refaturando codigo para aproveitar o codigo
+criando um estrutura de cadastro padrao Cadbase.js
+dentro da pasta script
+refaturando cadastro de produto
+refaturando cadastro usuario criando um controller saparada da outras 
+-------------------------------------------------------
+aula 22
+unidade de medida crinado tabela unidade de medida
+1 criando a controller dentro da pastacadastro
+criando model
+criando a view
+
+---------------------------------------------------------
+Aula 23 ---user roles um perfil de usario
+È uma forma de autorizar fucionalidade a grupos usuarios
+explo (conta tipo gerete pode fazer tudo : conta tipo adiministrativo pode fazer coisa que o gerete não pode )
+
+modificando class Contacontroller.cs
+
+ FormsAuthentication.Encrypt(new FormsAuthenticationTicket(
+                1, usuario.Nome,DateTime.Now, DateTime.Now.AddHours(12), login.LembraMe, "Gerente")); // crianado autenticação perfils gerente 
+
+depois vou la na global.asax.cs 
+criar um enveto protected void application_....
+
+Aula 24 -----Role ajuste
+Crinado uma class perfilmodel
+Crinado uma controle cadperfil
+indo na controller Cadusuario
+crinado um nova lista para preencher na view (viewbang.listaperfil)
+
+Criando a lista na model perfil
+
+
+----------------MYSQL--------------------------------     
+Fazendo uma inclusão em um tabela ja existente tem campo not null <SQL><SQL> Na tabela usuario
+1 passo alter table Usuario add id_perfil int null
+
+2 ALTER TABLE usuario ADD FOREIGN KEY (id_perfil) REFERENCES perfil(id); fezendo um entrelace entre a 2 tabela usuario e perfil 
+
+3 INSERT INTO perfil (nome, ativo) VALUES ('Gerente', 1); adcionndo na tabela
+
+4 UPDATE usuario SET id_perfil = 1 para as pessoa ta tabela seja do parfil gerente 
+
+5 ALTER TABLE usuario ALTER COLUMN id_perfil int not null /alterando a tabela agora pra que ela volta a ser not null
+----------------------------------------------------------
+Aula 25
+mundando o codigo para que o usuario tenha mas de um perfil tipo roles.
+foi feita uma mundança no codigo e no database
+
+Aula 26
+Fazendo a lista de usuario no castro de perfis
+incluindo uma lista de indice no drpodown do
+cadastro de grupo de perfis
+Editando a inxdex cadperfl
+editnado a class CadperfilController.cs
+crinado e incrementando a lista
+criando metudo recarregarusuario public
+depois que criar o metudo aperta f12
+
+Aula 27
+Tela proficionais
+acresentando messagem quando nao ouver resgistro nem um na tabela de dados no grid
+partido do controller
+depois criando a model
+depois a view 
+depois configrando o layout na shared
+configrando _cadastro.chtml
+para que apareça uma messagem informando que nao 
+nem um registro de dados
+utilizando o RAZON  (@Html.Raw)
+ <!---Crinado a loogica para se a lista estiver vazia aparecer uma messagem para o cliente  -->
+
+
+
+
+
+
+
+
+---------------------------------------------------------
+bugs
+--------------------------------------------------------
+anotações 
+A controller é oque controla a nossa visão
+
+desenvolver um aplicativo para as pessaol que tem probelama de alzimer tipo um jogo da memoria que monstra 
+a foto da pesssoa o nome, e o grau de parentesco
+
+-- Troca de nome perfil de usuaraio pra outro nome!
+
+---------------------------------------------------
+C# #MVC #NET #ASPNET . "Busco oportunidade de emprego/estágio na área para colocar em prática meus conhecimentos e adquirir novas experiências."
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+prova plomes
+
+1 uma equipe de 4  desenvolvedores: joão yara kelly e bruno. 
+
+R A afirmação correta é que Yara é sênior e prefere C.
+
+2 jão ,yara, kally, e bruno fazem parte de uma equipe e um deles lnaçõu uma nova feature.
+R A resposta correta é a letra C. O desenvolvedor que fala a verdade e o desenvolvedor que lançou o aplicativo sem passar pelo QA são
+Yara e Bruno.
+
+3 um sistema de condificação AB  representa os algarismo
+do dia do nascimento de CD data trinta de julho a=3; b=0;
+c=0; d=7;
+R: 09 setempro
+
+4 alberto nasceu no seculo xix em 1872, ao comemorar seu 
+aniversário , alberto notou que 
+R: Alberto completou 5 anos em 1841.
+
+5 considere a afirmação : "se hoje é sabado manhã não trabalhei". A negação
+R   Hoje é sábado e amanhã trabalharei.
+
+6 aparti das premissas: | pedro vai ao cinema adriana vai ao dentista || berto vai ao teatro
+
+R Pedro vai ao cinema ou Berto vai ao teatro.
+
+7 aldo daniel e eduardo são três amigos. dois dele tem 22 anos e sempre mantem . O outro deles tem 19...
+R eduardo tem 19 anos
+
+8 R: F 
+
+9 R :a
+
+10 b
+
+
+
+
+
