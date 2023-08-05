@@ -150,10 +150,11 @@ $(document).on('click', '#btn_incluir', function () {
     .on('click', '.page-item', function () { // craindo a parte 2 da pagina grid
 
         var btn = $(this),
+            filtro = $('#txt_filtro'),
             tamPag = $('#ddl_tam_pag').val(),
             pagina = btn.text(),
             url = url_page_click,
-            param = { 'pagina': pagina, 'tamPag': tamPag };
+            param = { 'pagina': pagina, 'tamPag': tamPag, 'filtro': filtro.val()};
 
         $.post(url, add_anti_forgery_token(param), function (response) {
             if (response) {
@@ -172,16 +173,41 @@ $(document).on('click', '#btn_incluir', function () {
     })
     .on('change', '#ddl_tam_pag', function () {
         var ddl = $(this),
+            filtro = $('#txt_filtro'),
             tamPag = ddl.val(), // configuração de pagina do dropdownselect
             pagina = 1,
             url = url_tam_pag_change,
-            param = { 'pagina': pagina, 'tamPag': tamPag };
+            param = { 'pagina': pagina, 'tamPag': tamPag, 'filtro': filtro.val()};
 
         $.post(url, add_anti_forgery_token(param), function (response) {
             if (response) {
                 var table = $('#grid_cadastro').find('tbody');
 
                 table.empty();
+                for (var i = 0; i < response.length; i++) {
+                    table.append(criar_linha_grid(response[i]));
+
+                }
+
+                ddl.siblings().removeClass('active');
+                ddl.addClass('active');
+            }
+        });
+    })
+    .on('keyup', '#txt_filtro', function () { //evento do botão de pesquisa
+        var filtro = $(this),
+            ddl = $('#ddl_tam_pag'),
+            tamPag = ddl.val(), // configuração de pagina do dropdownselect
+            pagina = 1,
+            url = url_filtro_change,
+            param = { 'pagina': pagina, 'tamPag': tamPag, 'filtro': filtro.val()};
+
+        $.post(url, add_anti_forgery_token(param), function (response) {
+            if (response) {
+                var table = $('#grid_cadastro').find('tbody');
+
+                table.empty();
+
                 for (var i = 0; i < response.length; i++) {
                     table.append(criar_linha_grid(response[i]));
 

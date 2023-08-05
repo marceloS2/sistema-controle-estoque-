@@ -31,9 +31,9 @@ namespace ControleDeEstoque.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public JsonResult GrupoProdutoPagina(int pagina, int tamPag)
+        public JsonResult GrupoProdutoPagina(int pagina, int tamPag, string filtro)
         {
-            var lista = GrupoProdutoModel.RecuperarLista(pagina, tamPag);// fazendo a logica da paginação 
+            var lista = GrupoProdutoModel.RecuperarLista(pagina, tamPag, filtro);// fazendo a logica da paginação 
             
             return Json(lista);
 

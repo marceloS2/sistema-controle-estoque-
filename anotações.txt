@@ -167,6 +167,14 @@ nem um registro de dados
 utilizando o RAZON  (@Html.Raw)
  <!---Crinado a loogica para se a lista estiver vazia aparecer uma messagem para o cliente  -->
 
+ ----------------------------------------------------------------------------------------------------------
+ Aula 28 Construindo um filtro de busca no grid = tabela
+ usando as tacnlogia ajxa
+ usando jquary para atulizar o grid de cordo com texto for prenchido
+ implemento filtro de busca no grupo de produtos.cshtml
+ editando script de cadastro no evento fucntion kyup
+ depois ir na controle cadgrupoproduto edita adcionar filtro
+ edita a model tambem 
 
 
 
@@ -189,41 +197,6 @@ a foto da pesssoa o nome, e o grau de parentesco
 C# #MVC #NET #ASPNET . "Busco oportunidade de emprego/estágio na área para colocar em prática meus conhecimentos e adquirir novas experiências."
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
-
-prova plomes
-
-1 uma equipe de 4  desenvolvedores: joão yara kelly e bruno. 
-
-R A afirmação correta é que Yara é sênior e prefere C.
-
-2 jão ,yara, kally, e bruno fazem parte de uma equipe e um deles lnaçõu uma nova feature.
-R A resposta correta é a letra C. O desenvolvedor que fala a verdade e o desenvolvedor que lançou o aplicativo sem passar pelo QA são
-Yara e Bruno.
-
-3 um sistema de condificação AB  representa os algarismo
-do dia do nascimento de CD data trinta de julho a=3; b=0;
-c=0; d=7;
-R: 09 setempro
-
-4 alberto nasceu no seculo xix em 1872, ao comemorar seu 
-aniversário , alberto notou que 
-R: Alberto completou 5 anos em 1841.
-
-5 considere a afirmação : "se hoje é sabado manhã não trabalhei". A negação
-R   Hoje é sábado e amanhã trabalharei.
-
-6 aparti das premissas: | pedro vai ao cinema adriana vai ao dentista || berto vai ao teatro
-
-R Pedro vai ao cinema ou Berto vai ao teatro.
-
-7 aldo daniel e eduardo são três amigos. dois dele tem 22 anos e sempre mantem . O outro deles tem 19...
-R eduardo tem 19 anos
-
-8 R: F 
-
-9 R :a
-
-10 b
 
 
 
